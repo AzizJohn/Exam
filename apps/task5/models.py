@@ -77,7 +77,7 @@ class Score(TimeStampedModel):
 class Round(TimeStampedModel):
     name = models.CharField(max_length=255, verbose_name=_("Name"))
     league = models.ForeignKey(League, on_delete=models.CASCADE, verbose_name=_("League"), null=True, blank=True)
-    matches = models.ManyToManyField(Match, verbose_name=_("Matches"), null=True, blank=True)
+    matches = models.ManyToManyField(Match, verbose_name=_("Matches"),)
 
     def __str__(self):
         return f'{self.name}'
