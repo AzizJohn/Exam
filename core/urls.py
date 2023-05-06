@@ -38,11 +38,12 @@ class LoginForm(AuthenticationForm):
 admin.site.login_form = LoginForm
 admin.site.login_template = "login.html"
 
-
 urlpatterns = [
     path("admin/", admin.site.urls),
     path("api-auth/", include("rest_framework.urls")),  # for browsable api
     path("", include("apps.urls")),  # entry point to other project app urls
+    path("vacancy/", include("apps.task2.urls")),  # entry point to other project app urls
+    path("product/", include("apps.task3.urls")),  # entry point to other project app urls
 ]
 
 urlpatterns += swagger_urlpatterns

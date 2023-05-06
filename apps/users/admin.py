@@ -1,9 +1,9 @@
 from django.contrib import admin
 
-from apps.users.models import CustomUser
+from apps.users.models import User
 
 
-class CustomUserAdmin(admin.ModelAdmin):
+class UserAdmin(admin.ModelAdmin):
     search_fields = ("username", "first_name", "last_name")
     list_display = ("id", "username", "first_name", "last_name")
     list_display_links = (
@@ -33,4 +33,4 @@ class CustomUserAdmin(admin.ModelAdmin):
 
 
 # Register your models here.
-admin.site.register(CustomUser, CustomUserAdmin)
+admin.site.register(User, UserAdmin)
